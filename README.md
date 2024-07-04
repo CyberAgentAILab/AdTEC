@@ -3,7 +3,7 @@
 The AdTEC dataset is designed to evaluate the quality of ad texts from multiple aspects, considering practical advertising operations.
 
 > [!NOTE]
-> This dataset will be available after the paper is accepted.
+> The dataset and code will be made available after the paper is accepted.
 
 ## Experiments and Tasks Considered in the Paper
 
