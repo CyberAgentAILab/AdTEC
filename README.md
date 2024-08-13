@@ -91,9 +91,13 @@ AdTEC dataset is released under the [CreativeCommons Attribution-NonCommercial-S
 ## Citation
 
 ```latex
-@misc{zhang-2024-adtec,
-  title = {{AdTEC}: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising},
-  author = {Zhang, Peinan and Sakai, Yusuke and Mita, Masato and Ouchi, Hiroki and Watanabe, Taro},
-  year = {2024}
+@misc{zhang2024adtec,
+      title={{AdTEC}: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising}, 
+      author={Peinan Zhang and Yusuke Sakai and Masato Mita and Hiroki Ouchi and Taro Watanabe},
+      year={2024},
+      eprint={2408.05906},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2408.05906}, 
 }
 ```
