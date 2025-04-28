@@ -57,10 +57,15 @@ def body(text: str, **kwargs) -> rx.Component:
     return rx.text(text, size="4", **kwargs)
 
 
-def image(src: str, caption: str = None, **kwargs) -> rx.Component:
+def image(src: str, caption: str = None, zoom: bool = False, **kwargs) -> rx.Component:
+    image_component = (
+        image_zoom(rx.image(src, align="center", **kwargs))
+        if zoom
+        else rx.image(src, align="center", **kwargs)
+    )
     return rx.vstack(
-        image_zoom(rx.image(src, align="center", **kwargs)),
-        rx.text(caption, size="4", align="center", **kwargs),
+        image_component,
+        rx.text(caption, size="4", align="center", text_align="justify", **kwargs),
         width="100%",
         height="100%",
         align="center",

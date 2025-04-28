@@ -1,13 +1,11 @@
 import reflex as rx
 
-from .. import constants, styles
-
 
 def adtec() -> rx.Component:
     return rx.container(
         rx.vstack(
             rx.vstack(
-                 rx.text(
+                rx.text(
                     rx.text(
                         rx.text.em("AdTEC"),
                         size="8",
@@ -16,9 +14,8 @@ def adtec() -> rx.Component:
                     ),
                 ),
                 rx.text(
-                    " is ",
                     rx.text(
-                        "the first public dataset",
+                        "The first public dataset",
                         as_="span",
                         _hover={
                             "transition": "all 0.2s ease-in-out",

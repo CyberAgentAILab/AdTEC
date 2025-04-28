@@ -4,3 +4,4 @@ __pycache__/
 *.db
 .states
 .web
+.DS_Store

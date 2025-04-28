@@ -45,6 +45,8 @@ def navbar() -> rx.Component:
                 ),
                 justify="between",
                 align_items="center",
+                margin_left="5%",
+                margin_right="5%",
             ),
         ),
         rx.mobile_and_tablet(
