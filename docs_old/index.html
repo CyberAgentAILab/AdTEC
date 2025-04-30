@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>AdTEC: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <style>
+    .small-caps {
+        font-variant: small-caps;
+    }
+    sup {
+      font-size: 60%;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><span class="small-caps">AdTEC</span>: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://peinan.cc" target="_blank">Peinan Zhang</a><sup>♠︎</sup>,</span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Yusuke Sakai</a><sup>◇</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Masato Mita</a><sup>◇</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Hiroki Ouchi</a><sup>♠︎,◇</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Taro Watanabe</a><sup>◇</sup></span>
+            </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>♠︎</sup>CyberAgent, <sup>◇</sup>Nara Institute of Science and Technology<br>NAACL-HLT 2025</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2408.05906" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/cyberagentailab/adtec" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2408.05906" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            With the increase in the fluency of ad texts automatically created by natural language generation technology, there is high demand to verify the quality of these creatives in a real-world setting.
+We propose <b><span class="small-caps">AdTEC</span></b>, the first public benchmark to evaluate ad texts from multiple perspectives within practical advertising operations.
+Our contributions are as follows: (i) Defining five tasks for evaluating the quality of ad texts, as well as building a Japanese dataset based on the practical operational experiences of advertising agencies, which are typically kept in-house. (ii) Validating the performance of existing pre-trained language models (PLMs) and human evaluators on the dataset. (iii) Analyzing the characteristics and providing challenges of the benchmark.
+The results show that while PLMs have already reached practical usage level in several tasks, humans still outperform in certain domains, implying that there is significant room for improvement in this area.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <div style="position: relative;">
+      <button onclick="copyToClipboard()" style="position: absolute; top: 4px; right: 4px; background: transparent; border: none; color: #aaa; font-size: 1em; transition: opacity 0.2s;" class="button is-small">
+        <span class="icon">
+          <i class="far fa-clone"></i>
+        </span>
+      </button>
+      <pre style="padding: 0em 1.5em;"><code id="bibtex-code">
+@inproceedings{zhang2025adtec,
+  title={{AdTEC}: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising},
+  author={Peinan Zhang and Yusuke Sakai and Masato Mita and Hiroki Ouchi and Taro Watanabe},
+  booktitle={Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT)},
+  year={2025},
+  publisher={Association for Computational Linguistics},
+  eprint={2408.05906},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2408.05906},
+}
+      </code></pre>
+    </div>
+  </div>
+</section>
+<script>
+  function copyToClipboard() {
+    const code = document.getElementById('bibtex-code').innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      const button = document.querySelector('button[onclick="copyToClipboard()"]');
+      button.style.opacity = 0;
+      setTimeout(() => {
+        button.innerHTML = 'Copied to clipboard!';
+        button.style.opacity = 1;
+      }, 200);
+      setTimeout(() => {
+        button.style.opacity = 0;
+        setTimeout(() => {
+          button.innerHTML = '<span class="icon"><i class="far fa-clone"></i></span>';
+          button.style.opacity = 1;
+        }, 200);
+      }, 3000);
+    }, (err) => {
+      console.error('Could not copy text: ', err);
+    });
+  }
+</script>
+<!--End BibTex citation -->
+
+
+  <footer class="footer" style="padding: 3rem 1.5rem 3rem;">
+  <div class="container">
+    <!-- <div class="columns">
+      <div class="column is-8"> -->
+        <div class="content" style="text-align: right; font-size: small;">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br/>Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+<!-- Default Statcounter code for adtec https://cyberagentailab.github.io/adtec
+-->
+<script type="text/javascript">
+  var sc_project=13085003;
+  var sc_invisible=1;
+  var sc_security="7d03b12e";
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img class="statcounter"
+  src="https://c.statcounter.com/13085003/0/7d03b12e/1/" alt="Web Analytics"
+  referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+  <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
