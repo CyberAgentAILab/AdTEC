@@ -2,6 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/-2408.05906-grey?style=flat&logo=arxiv)](https://arxiv.org/abs/2408.05906)
 [![Code](https://img.shields.io/badge/-Data-grey?style=flat&logo=github)](https://github.com/cyberagentailab/adtec)
+[![Project Page](https://img.shields.io/badge/-Project_Page-grey?style=flat&logo=home)](https://cyberagentailab.github.io/AdTEC/)
 [![Poster](https://img.shields.io/badge/-Poster-grey?style=flat&logo=adobe)](https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-poster.pdf)
 [![Slides](https://img.shields.io/badge/-Slides-grey?style=flat&logo=adobe)](https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-slides.pdf)
 [![Video](https://img.shields.io/badge/-YouTube-grey?style=flat&logo=youtube)](https://youtu.be/3QmKidnlkiI)
