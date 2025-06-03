@@ -1,9 +1,17 @@
 # AdTEC: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising
 
+[![arXiv](https://img.shields.io/badge/-2408.05906-grey?style=flat&logo=arxiv)](https://arxiv.org/abs/2408.05906)
+[![Code](https://img.shields.io/badge/-Data-grey?style=flat&logo=github)](https://github.com/cyberagentailab/adtec)
+[![Poster](https://img.shields.io/badge/-Poster-grey?style=flat&logo=adobe)](https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-poster.pdf)
+[![Slides](https://img.shields.io/badge/-Slides-grey?style=flat&logo=adobe)](https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-slides.pdf)
+[![Video](https://img.shields.io/badge/-YouTube-grey?style=flat&logo=youtube)](https://youtu.be/3QmKidnlkiI)
+
+
+
 The AdTEC dataset is designed to evaluate the quality of ad texts from multiple aspects, considering practical advertising operations.
 
 > [!NOTE]
-> The full dataset and code will be made available after the paper is accepted.
+> We are excited to announce that our paper has been accepted to the main track of NAACL 2025! We are making the data from this research publicly available in this repository.
 
 ## Experiments and Tasks Considered in the Paper
 
