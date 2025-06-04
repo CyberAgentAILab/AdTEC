@@ -2,17 +2,17 @@
 
 [![arXiv](https://img.shields.io/badge/-2408.05906-grey?style=flat&logo=arxiv)](https://arxiv.org/abs/2408.05906)
 [![Code](https://img.shields.io/badge/-Data-grey?style=flat&logo=github)](https://github.com/cyberagentailab/adtec)
-[![Project Page](https://img.shields.io/badge/-Project_Page-grey?style=flat&logo=home)](https://cyberagentailab.github.io/AdTEC/)
-[![Poster](https://img.shields.io/badge/-Poster-grey?style=flat&logo=adobe)](https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-poster.pdf)
-[![Slides](https://img.shields.io/badge/-Slides-grey?style=flat&logo=adobe)](https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-slides.pdf)
-[![Video](https://img.shields.io/badge/-YouTube-grey?style=flat&logo=youtube)](https://youtu.be/3QmKidnlkiI)
+[![Project Page](https://img.shields.io/badge/-Project_Page-grey?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmYWZhZmEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1nbG9iZS1pY29uIGx1Y2lkZS1nbG9iZSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgMmExNC41IDE0LjUgMCAwIDAgMCAyMCAxNC41IDE0LjUgMCAwIDAgMC0yMCIvPjxwYXRoIGQ9Ik0yIDEyaDIwIi8+PC9zdmc+)](https://cyberagentailab.github.io/AdTEC/)
+[![Poster](https://img.shields.io/badge/-Poster-grey?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmYWZhZmEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1maWxlLWljb24gbHVjaWRlLWZpbGUiPjxwYXRoIGQ9Ik0xNSAySDZhMiAyIDAgMCAwLTIgMnYxNmEyIDIgMCAwIDAgMiAyaDEyYTIgMiAwIDAgMCAyLTJWN1oiLz48cGF0aCBkPSJNMTQgMnY0YTIgMiAwIDAgMCAyIDJoNCIvPjwvc3ZnPg==)](https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-poster.pdf)
+[![Slides](https://img.shields.io/badge/-Slides-grey?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmYWZhZmEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1pbWFnZXMtaWNvbiBsdWNpZGUtaW1hZ2VzIj48cGF0aCBkPSJNMTggMjJINGEyIDIgMCAwIDEtMi0yVjYiLz48cGF0aCBkPSJtMjIgMTMtMS4yOTYtMS4yOTZhMi40MSAyLjQxIDAgMCAwLTMuNDA4IDBMMTEgMTgiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjgiIHI9IjIiLz48cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHg9IjYiIHk9IjIiIHJ4PSIyIi8+PC9zdmc+)](https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-slides.pdf)
+[![Video](https://img.shields.io/badge/-Video-grey?style=flat&logo=youtube)](https://youtu.be/3QmKidnlkiI)
 
 
 
 The AdTEC dataset is designed to evaluate the quality of ad texts from multiple aspects, considering practical advertising operations.
 
 > [!NOTE]
-> We are excited to announce that our paper has been accepted to the main track of NAACL 2025! We are making the data from this research publicly available in this repository.
+> We are excited to announce that our paper has been accepted to the main track of [NAACL 2025](https://aclanthology.org/2025.naacl-long.391/)! We are making the data from this research publicly available in this repository.
 
 ## Experiments and Tasks Considered in the Paper
 
@@ -100,13 +100,14 @@ AdTEC dataset is released under the [CreativeCommons Attribution-NonCommercial-S
 ## Citation
 
 ```latex
-@misc{zhang2024adtec,
-      title={{AdTEC}: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising}, 
-      author={Peinan Zhang and Yusuke Sakai and Masato Mita and Hiroki Ouchi and Taro Watanabe},
-      year={2024},
-      eprint={2408.05906},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2408.05906}, 
+@inproceedings{zhang2025adtec,
+  title={{AdTEC}: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising},
+  author={Peinan Zhang and Yusuke Sakai and Masato Mita and Hiroki Ouchi and Taro Watanabe},
+  booktitle={Proceedings of the 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics (NAACL)},
+  year={2025},
+  publisher={Association for Computational Linguistics},
+  eprint={2408.05906},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2408.05906},
 }
 ```
