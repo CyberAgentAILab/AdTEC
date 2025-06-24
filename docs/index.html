@@ -502,8 +502,23 @@
                 <h2 class="text-2xl mb-6 main-title">Tasks</h2>
                 <div>
                     <!-- Tab Buttons -->
-                    <div class="p-1 rounded-lg" style="background-color: var(--muted);">
-                        <nav class="flex space-x-1" aria-label="Tabs">
+                    <div class="sm:hidden relative mb-3">
+                        <button type="button" id="mobile-tabs-trigger" class="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium" style="background-color: var(--secondary); border: 1px solid var(--border);" aria-haspopup="true" aria-expanded="false">
+                            <span id="mobile-tabs-label">Acceptability</span>
+                            <i data-lucide="chevrons-up-down" class="h-4 w-4 opacity-50"></i>
+                        </button>
+                        <div id="mobile-tabs-menu" class="absolute right-0 z-10 mt-2 w-full origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" style="background-color: var(--popover); border: 1px solid var(--border);" role="menu" aria-orientation="vertical" aria-labelledby="mobile-tabs-trigger">
+                            <div class="py-1" role="none">
+                                <a href="#" class="dropdown-item text-[var(--popover-foreground)] block px-4 py-2 text-sm" role="menuitem" data-panel="acceptability-panel">Acceptability</a>
+                                <a href="#" class="dropdown-item text-[var(--popover-foreground)] block px-4 py-2 text-sm" role="menuitem" data-panel="consistency-panel">Consistency</a>
+                                <a href="#" class="dropdown-item text-[var(--popover-foreground)] block px-4 py-2 text-sm" role="menuitem" data-panel="performance-panel">Performance</a>
+                                <a href="#" class="dropdown-item text-[var(--popover-foreground)] block px-4 py-2 text-sm" role="menuitem" data-panel="a3-panel">Recognition</a>
+                                <a href="#" class="dropdown-item text-[var(--popover-foreground)] block px-4 py-2 text-sm" role="menuitem" data-panel="similarity-panel">Similarity</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden sm:block p-1 rounded-lg" style="background-color: var(--muted);">
+                        <nav id="desktop-tabs" class="flex space-x-1" aria-label="Tabs">
                             <button type="button" role="tab" aria-controls="acceptability-panel" aria-selected="true" class="tab-button active-tab w-full py-2 px-4 rounded-md font-medium text-sm transition-colors duration-200">Acceptability</button>
                             <button type="button" role="tab" aria-controls="consistency-panel" aria-selected="false" class="tab-button w-full py-2 px-4 rounded-md font-medium text-sm transition-colors duration-200">Consistency</button>
                             <button type="button" role="tab" aria-controls="performance-panel" aria-selected="false" class="tab-button w-full py-2 px-4 rounded-md font-medium text-sm transition-colors duration-200">Performance</button>
@@ -802,31 +817,66 @@
         // タブ切り替え機能
         const tabsContainer = document.querySelector('#tasks');
         if (tabsContainer) {
-            const tabButtons = tabsContainer.querySelectorAll('[role="tab"]');
+            const desktopTabs = tabsContainer.querySelector('#desktop-tabs');
+            const tabButtons = desktopTabs.querySelectorAll('[role="tab"]');
             const tabPanels = tabsContainer.querySelectorAll('[role="tabpanel"]');
+            const mobileDropdownTrigger = tabsContainer.querySelector('#mobile-tabs-trigger');
+            const mobileDropdownLabel = tabsContainer.querySelector('#mobile-tabs-label');
+            const mobileDropdownMenu = tabsContainer.querySelector('#mobile-tabs-menu');
+            const mobileDropdownItems = tabsContainer.querySelectorAll('.dropdown-item');
+
+            const showTab = (panelId) => {
+                tabPanels.forEach(panel => {
+                    panel.classList.toggle('hidden', panel.id !== panelId);
+                });
+            };
+
+            const setActive = (panelId) => {
+                const selectedText = document.querySelector(`.dropdown-item[data-panel="${panelId}"]`).textContent;
+
+                // Update desktop tabs
+                tabButtons.forEach(btn => {
+                    const isSelected = btn.getAttribute('aria-controls') === panelId;
+                    btn.classList.toggle('active-tab', isSelected);
+                    btn.setAttribute('aria-selected', isSelected);
+                });
+
+                // Update mobile dropdown label
+                if (mobileDropdownLabel) mobileDropdownLabel.textContent = selectedText;
+
+                showTab(panelId);
+            };
 
             tabButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
-
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('active-tab');
-                        btn.setAttribute('aria-selected', 'false');
-                    });
-
-                    button.classList.add('active-tab');
-                    button.setAttribute('aria-selected', 'true');
-
-                    tabPanels.forEach(panel => {
-                        if (panel.id === button.getAttribute('aria-controls')) {
-                            panel.classList.remove('hidden');
-                        } else {
-                            panel.classList.add('hidden');
-                        }
-                    });
+                    const panelId = button.getAttribute('aria-controls');
+                    setActive(panelId);
                 });
             });
+
+            if (mobileDropdownTrigger) {
+                mobileDropdownTrigger.addEventListener('click', () => {
+                    mobileDropdownMenu.classList.toggle('hidden');
+                });
+            }
+
+            mobileDropdownItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const panelId = item.getAttribute('data-panel');
+                    setActive(panelId);
+                    if(mobileDropdownMenu) mobileDropdownMenu.classList.add('hidden');
+                });
+            });
+
+            window.addEventListener('click', (e) => {
+                if (mobileDropdownTrigger && !mobileDropdownTrigger.contains(e.target) && mobileDropdownMenu && !mobileDropdownMenu.contains(e.target)) {
+                    mobileDropdownMenu.classList.add('hidden');
+                }
+            });
         }
+
 
         // アコーディオン機能
         const accordionTriggers = document.querySelectorAll('.accordion-trigger');
