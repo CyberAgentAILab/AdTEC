@@ -27,22 +27,22 @@
     <meta property="twitter:description" content="AdTEC is the first public benchmark to evaluate ad texts from multiple perspectives within practical advertising operations.">
     <meta property="twitter:image" content="https://cyberagentailab.github.io/AdTEC/img/og-image.png">
 
-    <!-- Tailwind CSSの読み込み -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Lucide Iconsの読み込み -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Embla Carouselの読み込み -->
+    <!-- Embla Carousel -->
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
 
-    <!-- Google Fontsの読み込み -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style type="text/tailwindcss">
-        /* shadcn/uiのテーマを模倣したカスタムスタイル */
+        /* Custom styles based on shadcn/ui theme */
         :root {
             /* Light Mode Variables */
             --background: #ffffff;
@@ -321,7 +321,7 @@
             100% { text-shadow: 0 0 5px rgba(0, 198, 255, 0.4), 0 0 8px rgba(0, 114, 255, 0.2); }
         }
 
-        /* カスタムベーススタイルの定義 */
+        /* Custom base styles */
         @layer base {
             body {
                 font-family: 'Inter', 'Noto Sans JP', sans-serif;
@@ -353,7 +353,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- 固定ヘッダー -->
+    <!-- Fixed header -->
     <header class="fixed top-0 left-0 right-0 z-50 header-bg border-b backdrop-blur-sm">
         <div class="container mx-auto px-4 h-16 flex items-center justify-between max-w-4xl">
             <a href="#" class="text-xl font-bold tracking-tight main-title">AdTEC</a>
@@ -376,10 +376,10 @@
         </div>
     </header>
 
-    <!-- メインコンテンツ -->
+    <!-- Main content -->
     <div class="container mx-auto px-4 pt-24 pb-8 md:pt-28 md:pb-12 max-w-4xl">
 
-        <!-- ヘッダーセクション -->
+        <!-- Header section -->
         <header class="text-center mb-12">
             <div class="inline-block rounded-full border px-3 py-1 text-xs font-medium main-subtitle mb-4" style="border-color: var(--border);">
                 Accepted to <a href="https://2025.naacl.org/" target="_blank" class="font-semibold text-[var(--foreground)] main-subtitle hover:opacity-75 transition-opacity">NAACL 2025</a>
@@ -398,7 +398,7 @@
             </div>
         </header>
 
-        <!-- リンクバッジセクション -->
+        <!-- Link badges section -->
         <div class="flex flex-wrap justify-center items-center gap-3 mb-16">
             <a href="https://huggingface.co/datasets/cyberagent/AdTEC" target="_blank" class="inline-flex items-center gap-2 resource-btn resource-btn-primary px-4 py-2 text-sm font-medium rounded-lg">
                 <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" class="w-4 h-4" alt="Hugging Face"> Dataset
@@ -421,7 +421,7 @@
         </div>
 
         <main class="space-y-8">
-            <!-- アブストラクトセクション -->
+            <!-- Abstract section -->
             <section id="abstract" class="card p-6 md:p-8">
                 <h2 class="text-2xl mb-4 main-title">Abstract</h2>
                 <p class="main-subtitle leading-relaxed text-sm">
@@ -429,7 +429,7 @@
                 </p>
             </section>
 
-            <!-- 概要図セクション -->
+            <!-- Overview section -->
             <section id="overview" class="card p-6 md:p-8">
                  <h2 class="text-2xl mb-4 main-title">Overview</h2>
                  <div id="overview-carousel">
@@ -497,7 +497,7 @@
                 </div>
             </section>
 
-            <!-- タスク紹介セクション（タブ形式） -->
+            <!-- Tasks section -->
             <section id="tasks" class="card p-6 md:p-8">
                 <h2 class="text-2xl mb-6 main-title">Tasks</h2>
                 <div>
@@ -618,7 +618,7 @@
                 </div>
             </section>
 
-            <!-- データセット統計セクション -->
+            <!-- Dataset statistics section -->
             <section id="dataset" class="card p-6 md:p-8">
                 <h2 class="text-2xl main-title">Dataset Statistics</h2>
                 <p class="main-subtitle mb-6 text-sm">Statistical information of data included in AdTEC benchmark</p>
@@ -680,7 +680,7 @@
                 </div>
             </section>
 
-            <!-- 引用セクション -->
+            <!-- Citation section -->
             <section id="citation" class="card p-6 md:p-8">
                 <h2 class="text-2xl main-title">Citation</h2>
                 <p class="main-subtitle mb-6 text-sm">Please cite our paper when you use this dataset.</p>
@@ -701,7 +701,7 @@
                 </div>
             </section>
 
-            <!-- FAQセクション -->
+            <!-- FAQ section -->
             <section id="faq" class="card p-6 md:p-8">
                 <h2 class="text-2xl mb-4 main-title">Frequently Asked Questions</h2>
                 <div class="accordion-container">
@@ -753,17 +753,17 @@
             </section>
         </main>
 
-        <!-- フッター -->
+        <!-- Footer -->
         <footer class="text-center mt-16 pt-8 footer">
             <p class="text-sm">&copy; 2025 CyberAgent, Inc. All Rights Reserved.</p>
         </footer>
     </div>
 
     <script>
-        // Lucide Iconsの初期化
+        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // クリップボードへのコピー機能
+        // Copy to clipboard functionality
         function copyToClipboard(button) {
             const textToCopy = document.getElementById('citation-text').innerText;
             const textarea = document.createElement('textarea');
@@ -772,7 +772,7 @@
             textarea.select();
             try {
                 document.execCommand('copy');
-                // アイコンを一時的に変更してフィードバック
+                // Change icon to feedback
                 button.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-green-400"></i>';
                 lucide.createIcons();
                 setTimeout(() => {
@@ -786,7 +786,7 @@
             document.body.removeChild(textarea);
         }
 
-        // テーマ切り替え機能
+        // Theme toggle functionality
         const themeToggleButton = document.getElementById('theme-toggle');
         const sunIcon = document.getElementById('theme-toggle-sun');
         const moonIcon = document.getElementById('theme-toggle-moon');
@@ -814,7 +814,7 @@
             applyTheme(newTheme);
         });
 
-        // タブ切り替え機能
+        // Tab toggle functionality
         const tabsContainer = document.querySelector('#tasks');
         if (tabsContainer) {
             const desktopTabs = tabsContainer.querySelector('#desktop-tabs');
@@ -878,7 +878,7 @@
         }
 
 
-        // アコーディオン機能
+        // Accordion functionality
         const accordionTriggers = document.querySelectorAll('.accordion-trigger');
         accordionTriggers.forEach(trigger => {
             trigger.addEventListener('click', () => {
@@ -894,7 +894,7 @@
             });
         });
 
-        // Embla Carousel 機能
+        // Embla Carousel functionality
         const setupEmblaCarousel = (emblaNode) => {
             if (!emblaNode) return;
             const viewportNode = emblaNode.querySelector('.embla__viewport');
