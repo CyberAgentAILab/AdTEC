@@ -41,286 +41,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="static/css/style.css">
+
     <style type="text/tailwindcss">
-        /* Custom styles based on shadcn/ui theme */
-        :root {
-            /* Light Mode Variables */
-            --background: #ffffff;
-            --foreground: #030213;
-            --card: #ffffff;
-            --card-foreground: #030213;
-            --popover: #ffffff;
-            --popover-foreground: #030213;
-            --primary: #030213;
-            --primary-foreground: #fafafa;
-            --secondary: #f3f3f5;
-            --secondary-foreground: #030213;
-            --muted: #f3f3f5;
-            --muted-foreground: #7c7c7c;
-            --accent: #e9ebef;
-            --accent-foreground: #030213;
-            --border: rgba(0, 0, 0, 0.1);
-            --ring: #030213;
-            --radius: 0.625rem;
-        }
-
-        .dark {
-            /* Dark Mode Variables */
-            --background: #030213;
-            --foreground: #fafafa;
-            --card: #0a091a;
-            --card-foreground: #fafafa;
-            --popover: #030213;
-            --popover-foreground: #fafafa;
-            --primary: #fafafa;
-            --primary-foreground: #030213;
-            --secondary: #1a192c;
-            --secondary-foreground: #fafafa;
-            --muted: #1a192c;
-            --muted-foreground: #A1A1A1;
-            --accent: #1a192c;
-            --accent-foreground: #fafafa;
-            --border: rgba(255, 255, 255, 0.1);
-            --ring: #fafafa;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 5rem;
-        }
-
-        .card {
-            background-color: var(--card);
-            color: var(--card-foreground);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-        }
-        .code-block {
-            background-color: var(--muted);
-            color: var(--muted-foreground);
-            border-radius: var(--radius);
-            font-family: monospace;
-            overflow-x: auto;
-        }
-        .header-bg {
-             background-color: hsla(0, 0%, 100%, 0.8);
-             border-color: var(--border);
-             transition: background-color 0.3s, border-color 0.3s;
-        }
-        .dark .header-bg {
-            background-color: rgba(3, 2, 19, 0.8);
-        }
-        .nav-link {
-            color: var(--muted-foreground);
-        }
-        .nav-link:hover {
-            color: var(--foreground);
-        }
-        .main-title {
-             color: var(--foreground);
-        }
-        .main-subtitle {
-            color: var(--muted-foreground);
-        }
-        .footer {
-            color: var(--muted-foreground);
-        }
-        /* Tab styles */
-        .tab-button {
-            background-color: transparent;
-            color: var(--muted-foreground);
-        }
-        .tab-button.active-tab {
-            background-color: var(--card);
-            color: var(--card-foreground);
-            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-        }
-        .dark .tab-button.active-tab {
-             box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-        }
-        /* Resource Button Styles */
-        .resource-btn {
-            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-        }
-        .resource-btn-primary {
-            background-color: var(--primary);
-            color: var(--primary-foreground);
-            border: 1px solid var(--primary);
-        }
-         .resource-btn-primary:hover {
-            opacity: 0.9;
-        }
-        .resource-btn-subtle {
-            background-color: transparent;
-            color: var(--foreground);
-            border: 1px solid transparent;
-        }
-        .resource-btn-subtle:hover {
-             background-color: var(--accent);
-             color: var(--accent-foreground);
-             border-color: var(--accent);
-        }
-        .dark .resource-btn-subtle {
-             border-color: var(--border);
-             color: var(--foreground);
-        }
-
-        /* Accordion styles */
-        .accordion-item:not(:last-child) {
-            border-bottom: 1px solid var(--border);
-        }
-        .accordion-trigger {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 1rem 0;
-            font-weight: 500;
-            text-align: left;
-            transition: padding-bottom 0.2s ease-out;
-        }
-        .accordion-trigger[aria-expanded="true"] {
-            padding-bottom: 0.1rem;
-        }
-        .accordion-content {
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .accordion-icon {
-            transition: transform 0.3s ease-out;
-        }
-        .accordion-trigger[aria-expanded="true"] .accordion-icon {
-            transform: rotate(180deg);
-        }
-
-        /* Embla Carousel Styles */
-        .embla {
-            --slide-spacing: 1rem;
-            --slide-size: 80%;
-        }
-        .embla__viewport {
-            overflow: hidden;
-        }
-        .embla__container {
-            backface-visibility: hidden;
-            display: flex;
-            touch-action: pan-y pinch-zoom;
-            margin-left: calc(var(--slide-spacing) * -1);
-        }
-        .embla__slide {
-            flex: 0 0 var(--slide-size);
-            min-width: 0;
-            padding-left: var(--slide-spacing);
-        }
-        .embla__slide__img-wrapper {
-             position: relative;
-             padding-top: 56.25%; /* 16:9 Aspect Ratio */
-             border-radius: var(--radius);
-             overflow: hidden;
-        }
-        .embla__slide__img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .embla__controls {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            justify-content: space-between;
-            gap: 1.2rem;
-            margin-top: 1rem;
-        }
-        .embla__buttons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            align-items: center;
-        }
-        .embla__button {
-            -webkit-appearance: none;
-            background-color: var(--secondary);
-            touch-action: manipulation;
-            display: inline-flex;
-            text-decoration: none;
-            cursor: pointer;
-            border: 0;
-            padding: 0;
-            margin: 0;
-            width: 2.5rem;
-            height: 2.5rem;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9999px;
-            color: var(--secondary-foreground);
-        }
-        .embla__button:disabled {
-            color: var(--muted-foreground);
-            cursor: default;
-            opacity: 0.7;
-        }
-        .embla__dots {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        .embla__dot {
-            -webkit-appearance: none;
-            background-color: transparent;
-            touch-action: manipulation;
-            display: inline-flex;
-            text-decoration: none;
-            cursor: pointer;
-            border: 0;
-            padding: 0;
-            margin: 0;
-            width: 1.5rem;
-            height: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9999px;
-        }
-        .embla__dot:after {
-            background-color: var(--accent);
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            content: '';
-        }
-        .embla__dot.embla__dot--selected:after {
-            background-color: var(--foreground);
-        }
-
-        .glowing-text {
-            background: linear-gradient(90deg, #00c6ff, #0072ff, #ff00ff, #ffdd57, #00c6ff);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glowing-animation 10s ease infinite, glowing-shadow-animation 8s ease-in-out infinite;
-        }
-
-        @keyframes glowing-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes glowing-shadow-animation {
-            0%   { text-shadow: 0 0 5px rgba(0, 198, 255, 0.4), 0 0 8px rgba(0, 114, 255, 0.2); }
-            25%  { text-shadow: 0 0 5px rgba(0, 114, 255, 0.4), 0 0 8px rgba(255, 0, 255, 0.2); }
-            50%  { text-shadow: 0 0 5px rgba(255, 0, 255, 0.4), 0 0 8px rgba(255, 221, 87, 0.2); }
-            75%  { text-shadow: 0 0 5px rgba(255, 221, 87, 0.4), 0 0 8px rgba(0, 198, 255, 0.2); }
-            100% { text-shadow: 0 0 5px rgba(0, 198, 255, 0.4), 0 0 8px rgba(0, 114, 255, 0.2); }
-        }
-
         /* Custom base styles */
         @layer base {
             body {
@@ -348,7 +72,6 @@
                 letter-spacing: -0.025em;
             }
         }
-
     </style>
 </head>
 <body class="antialiased">
@@ -409,10 +132,10 @@
             <a href="https://github.com/CyberAgentAILab/AdTEC" target="_blank" class="inline-flex items-center gap-2 resource-btn resource-btn-subtle px-4 py-2 text-sm font-medium rounded-lg">
                 <i data-lucide="github" class="w-4 h-4"></i> Code
             </a>
-            <a href="https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-poster.pdf" target="_blank" class="inline-flex items-center gap-2 resource-btn resource-btn-subtle px-4 py-2 text-sm font-medium rounded-lg">
+            <a href="https://github.com/CyberAgentAILab/AdTEC/blob/main/docs/static/pdf/NAACL2025-poster.pdf" target="_blank" class="inline-flex items-center gap-2 resource-btn resource-btn-subtle px-4 py-2 text-sm font-medium rounded-lg">
                 <i data-lucide="image" class="w-4 h-4"></i> Poster
             </a>
-            <a href="https://github.com/CyberAgentAILab/AdTEC/blob/main/materials/NAACL2025-slides.pdf" target="_blank" class="inline-flex items-center gap-2 resource-btn resource-btn-subtle px-4 py-2 text-sm font-medium rounded-lg">
+            <a href="https://github.com/CyberAgentAILab/AdTEC/blob/main/docs/static/pdf/NAACL2025-slides.pdf" target="_blank" class="inline-flex items-center gap-2 resource-btn resource-btn-subtle px-4 py-2 text-sm font-medium rounded-lg">
                 <i data-lucide="presentation" class="w-4 h-4"></i> Slides
             </a>
             <a href="https://youtu.be/3QmKidnlkiI" target="_blank" class="inline-flex items-center gap-2 resource-btn resource-btn-subtle px-4 py-2 text-sm font-medium rounded-lg">
@@ -438,19 +161,19 @@
                             <div class="embla__container">
                                 <div class="embla__slide">
                                     <div class="embla__slide__img-wrapper">
-                                        <img class="embla__slide__img" src="img/search-engine-ad.png" alt="Sponsored Search Ad">
+                                        <img class="embla__slide__img" src="static/image/search-engine-ad.png" alt="Sponsored Search Ad">
                                     </div>
                                     <p class="text-left text-sm main-subtitle mt-2">An example of a sponsored search ad. This demonstrates the typical structure, including titles and descriptions, which are the core components evaluated in the AdTEC benchmark for relevance and quality.</p>
                                 </div>
                                 <div class="embla__slide">
                                     <div class="embla__slide__img-wrapper">
-                                        <img class="embla__slide__img" src="img/adops-workflow.png" alt="AdOps Workflow">
+                                        <img class="embla__slide__img" src="static/image/adops-workflow.png" alt="AdOps Workflow">
                                     </div>
                                     <p class="text-left text-sm main-subtitle mt-2">We generalized advertising operations (AdOps) workflow: (1) The advertiser creates an LP to promote a product. (2) Based on the product information in the LP and target customers, text and graphics are designed by creators. (3) The creatives are evaluated based on fluency, attractiveness, regulations, legality, and other factors. (4) Once the creatives pass the quality evaluation, they are submitted to a delivery platform. (5) Customers respond to the displayed ads, such as page views, clicks, and purchases. (6) Based on the customer engagement, ad performance is reported back to the advertiser, and Steps 1-5 are repeated to improve the quality of the LP and ads.</p>
                                 </div>
                                 <div class="embla__slide">
                                     <div class="embla__slide__img-wrapper">
-                                        <img class="embla__slide__img" src="img/annotation-workflow.png" alt="Another slide">
+                                        <img class="embla__slide__img" src="static/image/annotation-workflow.png" alt="Another slide">
                                     </div>
                                     <p class="text-left text-sm main-subtitle mt-2">Dataset Construction. The annotation process was iterative: we conducted pilot annotation on a small data sample, revised guidelines based on results, and repeated this cycle at least twice (the "guideline creation" shown as a green line in the image). Once annotator agreement reached a threshold, we proceeded to the main annotation phase with a larger sample using finalized guidelines (shown as a dashed line). Please note that the methods of preprocessing, data splitting, and annotation vary depending on the task, so please refer to the paper for details.
                                         </p>
@@ -542,7 +265,7 @@
                                     </div>
                                 </div>
                                 <div class="p-2 rounded-lg">
-                                    <img src="img/example-ad-acceptability.png" alt="広告文の許容性タスクの例を示す画像" class="rounded-md w-full shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/600x300/e9ebef/717182?text=Example+Image';">
+                                    <img src="static/image/example-ad-acceptability.png" alt="広告文の許容性タスクの例を示す画像" class="rounded-md w-full shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/600x300/e9ebef/717182?text=Example+Image';">
                                 </div>
                             </div>
                         </div>
@@ -559,7 +282,7 @@
                                     </div>
                                 </div>
                                 <div class="p-2 rounded-lg">
-                                    <img src="img/example-ad-consistency.png" alt="広告文とLPの一貫性タスクの例を示す画像" class="rounded-md w-full shadow-md">
+                                    <img src="static/image/example-ad-consistency.png" alt="広告文とLPの一貫性タスクの例を示す画像" class="rounded-md w-full shadow-md">
                                 </div>
                             </div>
                         </div>
@@ -576,7 +299,7 @@
                                     </div>
                                 </div>
                                 <div class="p-2 rounded-lg">
-                                    <img src="img/example-ad-performance-estimation.png" alt="広告パフォーマンス推定タスクの例を示す画像" class="rounded-md w-full shadow-md">
+                                    <img src="static/image/example-ad-performance-estimation.png" alt="広告パフォーマンス推定タスクの例を示す画像" class="rounded-md w-full shadow-md">
                                 </div>
                             </div>
                         </div>
@@ -593,7 +316,7 @@
                                     </div>
                                 </div>
                                 <div class="p-2 rounded-lg">
-                                    <img src="img/example-a3-recognition.png" alt="A3認識タスクの例を示す画像" class="rounded-md w-full shadow-md">
+                                    <img src="static/image/example-a3-recognition.png" alt="A3認識タスクの例を示す画像" class="rounded-md w-full shadow-md">
                                 </div>
                             </div>
                         </div>
@@ -610,7 +333,7 @@
                                     </div>
                                 </div>
                                 <div class="p-2 rounded-lg">
-                                    <img src="img/example-ad-similarity.png" alt="広告文の類似度タスクの例を示す画像" class="rounded-md w-full shadow-md">
+                                    <img src="static/image/example-ad-similarity.png" alt="広告文の類似度タスクの例を示す画像" class="rounded-md w-full shadow-md">
                                 </div>
                             </div>
                         </div>
@@ -758,246 +481,6 @@
             <p class="text-sm">&copy; 2025 CyberAgent, Inc. All Rights Reserved.</p>
         </footer>
     </div>
-
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Copy to clipboard functionality
-        function copyToClipboard(button) {
-            const textToCopy = document.getElementById('citation-text').innerText;
-            const textarea = document.createElement('textarea');
-            textarea.value = textToCopy;
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-                document.execCommand('copy');
-                // Change icon to feedback
-                button.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-green-400"></i>';
-                lucide.createIcons();
-                setTimeout(() => {
-                    button.innerHTML = '<i data-lucide="copy" class="w-4 h-4"></i>';
-                    lucide.createIcons();
-                }, 2000);
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
-                alert('コピーに失敗しました。');
-            }
-            document.body.removeChild(textarea);
-        }
-
-        // Theme toggle functionality
-        const themeToggleButton = document.getElementById('theme-toggle');
-        const sunIcon = document.getElementById('theme-toggle-sun');
-        const moonIcon = document.getElementById('theme-toggle-moon');
-
-        const getCurrentTheme = () => document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-
-        const applyTheme = (theme) => {
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            } else {
-                document.documentElement.classList.remove('dark');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            }
-        };
-
-        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        applyTheme(savedTheme);
-
-        themeToggleButton.addEventListener('click', () => {
-            const newTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('theme', newTheme);
-            applyTheme(newTheme);
-        });
-
-        // Tab toggle functionality
-        const tabsContainer = document.querySelector('#tasks');
-        if (tabsContainer) {
-            const desktopTabs = tabsContainer.querySelector('#desktop-tabs');
-            const tabButtons = desktopTabs.querySelectorAll('[role="tab"]');
-            const tabPanels = tabsContainer.querySelectorAll('[role="tabpanel"]');
-            const mobileDropdownTrigger = tabsContainer.querySelector('#mobile-tabs-trigger');
-            const mobileDropdownLabel = tabsContainer.querySelector('#mobile-tabs-label');
-            const mobileDropdownMenu = tabsContainer.querySelector('#mobile-tabs-menu');
-            const mobileDropdownItems = tabsContainer.querySelectorAll('.dropdown-item');
-
-            const showTab = (panelId) => {
-                tabPanels.forEach(panel => {
-                    panel.classList.toggle('hidden', panel.id !== panelId);
-                });
-            };
-
-            const setActive = (panelId) => {
-                const selectedText = document.querySelector(`.dropdown-item[data-panel="${panelId}"]`).textContent;
-
-                // Update desktop tabs
-                tabButtons.forEach(btn => {
-                    const isSelected = btn.getAttribute('aria-controls') === panelId;
-                    btn.classList.toggle('active-tab', isSelected);
-                    btn.setAttribute('aria-selected', isSelected);
-                });
-
-                // Update mobile dropdown label
-                if (mobileDropdownLabel) mobileDropdownLabel.textContent = selectedText;
-
-                showTab(panelId);
-            };
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const panelId = button.getAttribute('aria-controls');
-                    setActive(panelId);
-                });
-            });
-
-            if (mobileDropdownTrigger) {
-                mobileDropdownTrigger.addEventListener('click', () => {
-                    mobileDropdownMenu.classList.toggle('hidden');
-                });
-            }
-
-            mobileDropdownItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const panelId = item.getAttribute('data-panel');
-                    setActive(panelId);
-                    if(mobileDropdownMenu) mobileDropdownMenu.classList.add('hidden');
-                });
-            });
-
-            window.addEventListener('click', (e) => {
-                if (mobileDropdownTrigger && !mobileDropdownTrigger.contains(e.target) && mobileDropdownMenu && !mobileDropdownMenu.contains(e.target)) {
-                    mobileDropdownMenu.classList.add('hidden');
-                }
-            });
-        }
-
-
-        // Accordion functionality
-        const accordionTriggers = document.querySelectorAll('.accordion-trigger');
-        accordionTriggers.forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                const content = trigger.nextElementSibling;
-                const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-
-                trigger.setAttribute('aria-expanded', !isExpanded);
-                if (!isExpanded) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                } else {
-                    content.style.maxHeight = '0';
-                }
-            });
-        });
-
-        // Embla Carousel functionality
-        const setupEmblaCarousel = (emblaNode) => {
-            if (!emblaNode) return;
-            const viewportNode = emblaNode.querySelector('.embla__viewport');
-            const prevBtnNode = emblaNode.querySelector('.embla__button--prev');
-            const nextBtnNode = emblaNode.querySelector('.embla__button--next');
-            const dotsNode = emblaNode.querySelector('.embla__dots');
-
-            if (!viewportNode) return;
-
-            const emblaApi = EmblaCarousel(viewportNode, { align: 'center', loop: true });
-
-            const TWEEN_FACTOR_BASE = 0.2
-            let tweenFactor = 0
-            let tweenNodes = []
-
-            const setTweenNodes = (emblaApi) => {
-                tweenNodes = emblaApi.slideNodes().map((slideNode) => {
-                    return slideNode.querySelector('.embla__parallax__layer');
-                })
-            }
-
-            const setTweenFactor = (emblaApi) => {
-                tweenFactor = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length
-            }
-
-            const tweenParallax = (emblaApi, eventName) => {
-                const engine = emblaApi.internalEngine();
-                const scrollProgress = emblaApi.scrollProgress();
-                const slidesInView = emblaApi.slidesInView();
-                const isScrollEvent = eventName === 'scroll';
-
-                emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-                    let diffToTarget = scrollSnap - scrollProgress;
-                    const slidesInSnap = engine.slideRegistry[snapIndex];
-
-                    slidesInSnap.forEach((slideIndex) => {
-                    if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
-
-                    if (engine.options.loop) {
-                        engine.slideLooper.loopPoints.forEach((loopItem) => {
-                        const target = loopItem.target();
-                        if (slideIndex === loopItem.index && target !== 0) {
-                            const sign = Math.sign(target);
-                            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
-                            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
-                        }
-                        })
-                    }
-                    const translate = diffToTarget * (-1 * tweenFactor) * 100;
-                    const tweenNode = tweenNodes[slideIndex];
-                    if (tweenNode) tweenNode.style.transform = `translateX(${translate}%)`;
-                    });
-                });
-            };
-
-            const addDotBtnsAndClickHandlers = (emblaApi, dotsNode) => {
-                let dotNodes = []
-                if (dotsNode) {
-                    dotsNode.innerHTML = emblaApi.scrollSnapList().map(() => '<button class="embla__dot" type="button"></button>').join('')
-                    dotNodes = Array.from(dotsNode.querySelectorAll('.embla__dot'))
-                    dotNodes.forEach((dotNode, index) => {
-                        dotNode.addEventListener('click', () => emblaApi.scrollTo(index), false)
-                    })
-                }
-                return dotNodes
-            }
-
-            const toggleDotBtnsActive = (emblaApi, dotNodes) => {
-                const selected = emblaApi.selectedScrollSnap()
-                dotNodes.forEach((dotNode, index) => {
-                    dotNode.classList.toggle('embla__dot--selected', index === selected)
-                })
-            }
-
-            const dotNodes = addDotBtnsAndClickHandlers(emblaApi, dotsNode);
-
-            const onSelect = (emblaApi) => {
-                toggleDotBtnsActive(emblaApi, dotNodes);
-                if(prevBtnNode) prevBtnNode.disabled = !emblaApi.canScrollPrev();
-                if(nextBtnNode) nextBtnNode.disabled = !emblaApi.canScrollNext();
-            }
-
-            if(prevBtnNode) prevBtnNode.addEventListener('click', emblaApi.scrollPrev, false);
-            if(nextBtnNode) nextBtnNode.addEventListener('click', emblaApi.scrollNext, false);
-
-            emblaApi.on('select', onSelect);
-            emblaApi.on('reInit', onSelect);
-            emblaApi.on('reInit', setTweenNodes);
-            emblaApi.on('reInit', setTweenFactor);
-            emblaApi.on('reInit', tweenParallax);
-            emblaApi.on('scroll', tweenParallax);
-
-            setTweenNodes(emblaApi);
-            setTweenFactor(emblaApi);
-            tweenParallax(emblaApi);
-            onSelect(emblaApi);
-        };
-
-        const overviewCarouselNode = document.querySelector('#overview-carousel');
-        if (overviewCarouselNode) {
-          setupEmblaCarousel(overviewCarouselNode);
-        }
-
-    </script>
+    <script src="static/js/main.js"></script>
 </body>
 </html>
