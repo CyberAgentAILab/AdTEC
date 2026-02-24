@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "AdTEC: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising"
+type: dataset
+authors:
+  - family-names: Zhang
+    given-names: Peinan
+    orcid: "https://orcid.org/0009-0007-6541-1029"
+  - family-names: Sakai
+    given-names: Yusuke
+  - family-names: Mita
+    given-names: Masato
+  - family-names: Ouchi
+    given-names: Hiroki
+  - family-names: Watanabe
+    given-names: Taro
+repository-code: "https://github.com/CyberAgentAILab/AdTEC"
+url: "https://cyberagentailab.github.io/AdTEC/"
+license: CC-BY-NC-SA-4.0
+preferred-citation:
+  type: conference-paper
+  title: "AdTEC: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising"
+  authors:
+    - family-names: Zhang
+      given-names: Peinan
+      orcid: "https://orcid.org/0009-0007-6541-1029"
+    - family-names: Sakai
+      given-names: Yusuke
+    - family-names: Mita
+      given-names: Masato
+    - family-names: Ouchi
+      given-names: Hiroki
+    - family-names: Watanabe
+      given-names: Taro
+  collection-title: "Proceedings of the 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics (NAACL)"
+  year: 2025
+  publisher:
+    name: "Association for Computational Linguistics"
+  doi: "10.18653/v1/2025.naacl-long.391"
+  url: "https://aclanthology.org/2025.naacl-long.391/"
